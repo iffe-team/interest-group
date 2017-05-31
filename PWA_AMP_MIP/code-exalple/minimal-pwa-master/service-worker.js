@@ -26,15 +26,13 @@ self.addEventListener('install', function(e) {
 self.addEventListener('activate', function(e) {
   console.log('Activate event')
   e.waitUntil(
-    Promise.all(
       caches.keys().then(cacheNames => {
         return cacheNames.map(name => {
           if (name !== cacheStorageKey) {
             return caches.delete(name)
           }
         })
-      })
-    ).then(() => {
+      }).then(() => {
       console.log('Clients claims.')
       return self.clients.claim()
     })
