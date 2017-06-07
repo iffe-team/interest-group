@@ -1,0 +1,16 @@
+<!--detail.wxml-->
+<view class="container">
+  <view class="tapbar">
+    <text bindtap="choosePic" class="choosePic">选择图片</text>
+    <text bindtap="exportPic" class="exportPic">导出图片</text>
+  </view>
+  <canvas canvas-id="myCanvas" class="myCanvas"
+    disable-scroll="true"
+    bindtouchstart="start"
+    bindtouchmove="move"
+    bindtouchend="end"
+  />
+  <view class="toolbar">
+
+  </view>
+</view>
